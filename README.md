@@ -45,7 +45,7 @@ clara, intuitiva e orientada à matérias.
 
 **Controladores de versão**: Git e Github
 
-**APIs:** StudioFoxAPI
+**APIs:** StudyFoxAPI
 
 **Ferramentas de design**: Canva
 
@@ -57,8 +57,8 @@ Luiz Carlos: Tarefas, Tarefa, Router;
 
 Bernardo: Opções, Documentação inicial, Relatório Final, API;
 
-Lígia Andreza: LandPage, Ux,ui design, Documentação, Relatório Final;
+Lígia Andreza: LandingPage, UX/UI design, Documentação, Relatório Final;
 
 Maria Eduarda: Matérias, Banco de dados;
 
-João Pedro: Login, Cadastro.
+João Pedro: Login, Cadastro, Documentação.
