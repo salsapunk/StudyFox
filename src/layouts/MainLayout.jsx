@@ -5,6 +5,7 @@ import $ from "@/styles/MainLayout.module.css";
 import OpcoesModal from "./modals/OpcoesModal";
 
 import _gearIcon from '@/assets/icons/gear.png'
+import _logo from '@/assets/images/logo.png'
 
 export default function MainLayout() {
 	const [modalAberto, setModalAberto] = useState(false);
@@ -22,7 +23,7 @@ export default function MainLayout() {
 				</div>
 				<div className={$.logotype}>
 					<h1 className={$.title}>StudyFox</h1>
-					<img src={_gearIcon} alt="Logotipo do StudyFox" /> {/* TBD: Substituir _gearIcon pelo ícone da logotipo */}
+					<img src={_logo} alt="Logotipo do StudyFox" /> {/* TBD: Substituir _gearIcon pelo ícone da logotipo */}
 				</div>
 			</header>
 

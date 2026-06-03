@@ -37,7 +37,6 @@
 	-webkit-text-stroke: 2px var(--marrom-1);
 }
 .logotype img {
-	filter: invert(100%);
 	width: 3rem;
 	height: 3rem;
 }
