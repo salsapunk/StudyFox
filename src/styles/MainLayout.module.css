@@ -1,0 +1,42 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-block: 1rem;
+	padding-inline: 1rem;
+}
+
+.options_btn {
+	display: flex;
+	padding: 0.5rem;
+	background-color: var(--laranja);
+	border: 2px solid var(--marrom-1);
+	border-radius: 2rem;
+}
+.options_btn img {
+	filter: invert(25%) sepia(84%) saturate(2044%) hue-rotate(26deg) brightness(94%) contrast(103%);
+	align-self: center;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.options_btn:hover {
+	cursor: pointer;
+}
+
+.logotype {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1rem;
+}
+.logotype h1 {
+	text-transform: uppercase;
+	font-size: 40pt;
+	color: var(--laranja);
+	-webkit-text-stroke: 2px var(--marrom-1);
+}
+.logotype img {
+	width: 3rem;
+	height: 3rem;
+}
