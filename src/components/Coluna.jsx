@@ -1,10 +1,13 @@
 import { Children } from "react";
+import { useDroppable } from "@dnd-kit/react";
 
 import $ from "@/styles/Coluna.module.css";
 
-function Coluna({ nome, children }) {
+function Coluna({ id, nome, children }) {
+	const { ref } = useDroppable({ id })
+
 	return (
-		<section className={$.column}>
+		<section ref={ref} className={$.column}>
 			<header className={$.col_header}>
 				<h2>{nome}</h2>
 			</header>
