@@ -2,8 +2,18 @@ import CardTarefa from "@/components/CardTarefa";
 import Coluna from "@/components/Coluna";
 
 import $ from "@/styles/Tarefas.module.css";
+import TAREFAS from '@/temp_data/tarefas';
 
 export default function Tarefas() {
+	/* SOBRE A EXIBIÇÃO DAS TAREFAS
+	 *	Apesar da filtragem provavelmente se manter, o nível de complexidade
+	 *	para esta página alterará com a integração do site com a API, devido
+	 *	à lógica de fetching das tarefas.
+	 */
+	const aFazer = TAREFAS.filter(tar => tar.coluna == 1);
+	const emAndamento = TAREFAS.filter(tar => tar.coluna == 2);
+	const concluidas = TAREFAS.filter(tar => tar.coluna == 3);
+
 	return (
 		<main className={$.page}>
 			<header className={$.header}>
@@ -12,16 +22,19 @@ export default function Tarefas() {
 			</header>
 			<section className={$.kanban_board}>
 				<Coluna className={$.column} nome="A fazer">
-					<CardTarefa nome="Lorem ipsum dolor sit amet"/>
-					<CardTarefa nome="Lorem ipsum dolor sit amet"/>
+					{aFazer.map((tar, idx) => (
+						<CardTarefa nome={tar.nome} coluna={tar.coluna} key={idx} />
+					))}
 				</Coluna>
 				<Coluna className={$.column} nome="Em andamento">
-					<CardTarefa nome="Lorem ipsum dolor sit amet"/>
+					{emAndamento.map((tar, idx) => (
+						<CardTarefa nome={tar.nome} coluna={tar.coluna} key={idx} />
+					))}
 				</Coluna>
 				<Coluna className={$.column} nome="Concluídas">
-					<CardTarefa nome="Lorem ipsum dolor sit amet"/>
-					<CardTarefa nome="Lorem ipsum dolor sit amet"/>
-					<CardTarefa nome="Lorem ipsum dolor sit amet"/>
+					{concluidas.map((tar, idx) => (
+						<CardTarefa nome={tar.nome} coluna={tar.coluna} key={idx} />
+					))}
 				</Coluna>
 			</section>
 		</main>
