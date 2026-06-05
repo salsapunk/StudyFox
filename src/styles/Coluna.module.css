@@ -1,0 +1,27 @@
+.column {
+	flex: 1;
+}
+
+.col_header {
+	display: flex;
+	justify-content: center;
+	border-block: 4px solid var(--marrom-1);
+	background-color: #c6732e;
+}
+.col_header h2 {
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	color: var(--laranja);
+	-webkit-text-stroke: 4px var(--marrom-1);
+	paint-order: stroke fill;
+}
+
+.task_list {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	gap: 1rem;
+	height: 100%;
+	list-style-type: none;
+	background-color: var(--carmim-acinzentado);
+}
