@@ -1,0 +1,174 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.PáginaLogin {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-color: #1e191a;
+  font-family: 'Sour Gummy', sans-serif;
+}
+
+/* parte esquerda da página*/
+.ParteEsquerda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 5rem;
+}
+
+/* Header / Logo */
+.login-header {
+  margin-bottom: 2.5rem;
+}
+
+.LogoStudyfox {
+  width: 260px;
+  display: block;
+}
+
+.login-subtitle {
+  font-style: italic;
+  color: #c0c0c0;
+  font-size: 1rem;
+  margin-top: 0.4rem;
+  margin-left: 0.25rem;
+}
+
+/* Formulário com email e senha */
+.Formulário {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.LoginEmail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 60%;
+}
+
+.LoginSenha label {
+  font-style: italic;
+  color: #d4d4d4;
+  font-size: 0.95rem;
+}
+
+.login-field input {
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #666;
+  color: #e5e5e5;
+  font-size: 1rem;
+  padding: 4px 0 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-field input:focus {
+  border-bottom-color: #f97316;
+}
+
+/* Botão Login */
+.BotãoLogin {
+  background: #f78928;
+  border: none;
+  border-radius: 9999px;
+  color: white;
+  font-size: 1rem;
+  font-style: italic;
+  padding: 12px 0;
+  width: 38%;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.BotãoLogin:hover {
+  background: #f78928;
+  transform: scale(1.02);
+}
+
+/* Botões com outras opções de login */
+.OutrosMeios {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 1.5rem;
+}
+
+.BotãoOutrosMeios {
+  width: 46px;
+  height: 46px;
+  background: #9f4b00;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.BotãoOutrosMeios:hover {
+  background: #9f4b00;
+  transform: scale(1.05);
+}
+
+/* Botão para ir para a parte de cadastro */
+.SignUp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.SignUp p {
+  font-style: italic;
+  color: #a3a3a3;
+  font-size: 0.9rem;
+}
+
+.Cadastrar {
+  background: transparent;
+  border: none;
+  color: #a3a3a3;
+  font-style: italic;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.Cadastrar:hover {
+  color: #f97316;
+}
+
+/* parte direita da página */
+.ParteDireita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.bemvindodevolta {
+  width: 85%;
+  max-width: 440px;
+}
+
+.RaposaSentada {
+  width: 52%;
+  max-width: 280px;
+}
+
