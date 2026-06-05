@@ -32,9 +32,11 @@
 }
 .logotype h1 {
 	text-transform: uppercase;
+	letter-spacing: 0.15rem;
 	font-size: 40pt;
 	color: var(--laranja);
-	-webkit-text-stroke: 2px var(--marrom-1);
+	-webkit-text-stroke: 8px var(--marrom-1);
+	paint-order: stroke fill;
 }
 .logotype img {
 	width: 3rem;
