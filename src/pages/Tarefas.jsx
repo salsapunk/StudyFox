@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DragDropProvider } from "@dnd-kit/react";
-import { Outlet, useNavigate, useParams } from 'react-router';
+import { Outlet, useNavigate, useParams, useMatch } from 'react-router';
 
 import CardTarefa from "@/components/CardTarefa";
 import Coluna from "@/components/Coluna";
@@ -14,8 +14,9 @@ const COLUNAS = [
 ];
 
 export default function Tarefas() {
-	const navigate = useNavigate()
 	const { materiaId } = useParams()
+	const navigate = useNavigate()
+	const isTarefaOpen = useMatch("/materias/:materiaId/tarefa/:tarefaId")
 
 	/* SOBRE A EXIBIÇÃO DAS TAREFAS
 	 *	Apesar da filtragem provavelmente se manter, o nível de complexidade
@@ -47,13 +48,19 @@ export default function Tarefas() {
 		event.preventDefault()
 		navigate(`/materias/${materiaId}/tarefa/${tarefaId}`)
 	}
+	const handleClickOverlay = () => navigate(-1)
+	const handleClickModal = (event) => event.stopPropagation()
 
-	return (
+	return (<>
+		{/* Rota /materias/:materiaId */}
 		<main className={$.page}>
+			{/* Cabeçalho da página */}
             <header className={$.header}>
                 <h1>Tarefas</h1>
                 <button>+ Criar tarefa</button>
             </header>
+
+			{/* Quadro Kanban */}
             <section className={$.kanban_board}>
                 <DragDropProvider onDragEnd={handleDragEnd}>
                     {COLUNAS.map((col) => (
@@ -73,6 +80,15 @@ export default function Tarefas() {
                 </DragDropProvider>
             </section>
         </main>
-	)
+
+		{/* Wrapper p/a rota /materias/:materiaId/tarefa/:tarefaId */}
+		{isTarefaOpen && (
+			<div className={$.modal_overlay} onClick={handleClickOverlay}>
+				<div className={$.modal_content} onClick={handleClickModal}>
+					<Outlet />
+				</div>
+			</div>
+		)}
+	</>);
 }
 
