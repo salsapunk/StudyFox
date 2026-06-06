@@ -3,13 +3,14 @@ import $ from '@/styles/Tarefa.module.css'
 
 export default function Tarefa() {
 	const { nome, prazo, anotacao } = useLoaderData();
+	const prazoFormatado = prazo.toLocaleString('pt-BR')
 
 	return (
 		<section className={$.modal}>
 			<header>
 				<hgroup>
 					<h2>{nome}</h2>
-					{/*<p>{prazo}</p>*/}
+					<p>{prazoFormatado}</p>
 				</hgroup>
 				<div className={$.button_wrapper}>
 					<button>
