@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useParams } from 'react-router'
 import { DragDropProvider } from "@dnd-kit/react";
 
 import CardTarefa from "@/components/CardTarefa";
@@ -13,12 +14,16 @@ const COLUNAS = [
 ];
 
 export default function Tarefas() {
+	const { materiaId } = useParams()
+
 	/* SOBRE A EXIBIÇÃO DAS TAREFAS
 	 *	Apesar da filtragem provavelmente se manter, o nível de complexidade
 	 *	para esta página alterará com a integração do site com a API, devido
 	 *	à lógica de fetching das tarefas.
 	 */
-	const [listaTarefas, setListaTarefas] = useState(TAREFAS)
+	const [listaTarefas, setListaTarefas] = useState(TAREFAS.filter(
+		tarefa => tarefa.codigo === parseInt(materiaId)
+	))
 
 	const handleDragEnd = (event) => {
 		const tarefaId = event.operation.source?.id
@@ -48,10 +53,12 @@ export default function Tarefas() {
                             {listaTarefas
                                 .filter((tar) => tar.coluna === col.id)
                                 .map((tar) => (
-                                    <CardTarefa 
-										key={tar.id} id={tar.id} 
-										nome={tar.nome} coluna={tar.coluna}
-									/>
+									<Link to={`/materias/${materiaId}/tarefa/${tar.id}`}>
+										<CardTarefa 
+											key={tar.id} id={tar.id} 
+											nome={tar.nome} coluna={tar.coluna}
+										/>
+									</Link>
                                 ))
                             }
                         </Coluna>
