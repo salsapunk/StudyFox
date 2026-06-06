@@ -11,6 +11,9 @@ import Tarefa from "./pages/Tarefa";
 // Layouts:
 import MainLayout from "./layouts/MainLayout";
 
+// Loaders e Actions:
+import tarefaLoader from "./api/tarefaLoader";
+
 let router = createBrowserRouter([
 	{
 		path: "/",
@@ -28,7 +31,8 @@ let router = createBrowserRouter([
 						children: [
 							{
 								path: "/materias/:materiaId/tarefa/:tarefaId",
-								Component: Tarefa
+								Component: Tarefa,
+								loader: tarefaLoader
 							}
 						]
 					},
