@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link, useParams } from 'react-router'
 import { DragDropProvider } from "@dnd-kit/react";
+import { Outlet, useNavigate, useParams } from 'react-router';
 
 import CardTarefa from "@/components/CardTarefa";
 import Coluna from "@/components/Coluna";
@@ -14,6 +14,7 @@ const COLUNAS = [
 ];
 
 export default function Tarefas() {
+	const navigate = useNavigate()
 	const { materiaId } = useParams()
 
 	/* SOBRE A EXIBIÇÃO DAS TAREFAS
@@ -39,6 +40,13 @@ export default function Tarefas() {
 			)
 		);
 	}
+	const handleClickCard = (event, tarefaId) => {
+		/* Temporariamente vai ser aberto ao clicar com o botão direito, até eu
+		 * criar um componente de menu de contexto e/ou encontrar um método 
+		 * melhor. */
+		event.preventDefault()
+		navigate(`/materias/${materiaId}/tarefa/${tarefaId}`)
+	}
 
 	return (
 		<main className={$.page}>
@@ -53,12 +61,11 @@ export default function Tarefas() {
                             {listaTarefas
                                 .filter((tar) => tar.coluna === col.id)
                                 .map((tar) => (
-									<Link to={`/materias/${materiaId}/tarefa/${tar.id}`}>
-										<CardTarefa 
-											key={tar.id} id={tar.id} 
-											nome={tar.nome} coluna={tar.coluna}
-										/>
-									</Link>
+									<CardTarefa 
+										key={tar.id} id={tar.id} 
+										nome={tar.nome} coluna={tar.coluna}
+										onContextMenu={(e) => handleClickCard(e, tar.id)}
+									/>
                                 ))
                             }
                         </Coluna>
