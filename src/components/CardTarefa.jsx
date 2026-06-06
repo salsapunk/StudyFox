@@ -1,7 +1,7 @@
 import $ from "@/styles/CardTarefa.module.css";
 import { useDraggable } from "@dnd-kit/react";
 
-function CardTarefa({ id, nome, coluna = 1 }) {
+function CardTarefa({ id, nome, coluna = 1, ...props }) {
 	const { ref } = useDraggable({ id })
 
 	const estilo_coluna = coluna == 1
@@ -12,7 +12,10 @@ function CardTarefa({ id, nome, coluna = 1 }) {
 	const estilos = `${$.task_card} ${estilo_coluna}`;
 
 	return (
-		<article ref={ref} className={estilos}>
+		<article 
+			{...props}
+			ref={ref} className={estilos}
+		>
 			<h3>{nome}</h3>
 		</article>
 	)
