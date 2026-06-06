@@ -1,11 +1,18 @@
 import { useLoaderData } from "react-router"
+import { useNavigate } from 'react-router'
+
 import $ from '@/styles/Tarefa.module.css'
 
 import CloseWindow from '@/assets/icons/close-window.svg?react'
 import TrashCan from '@/assets/icons/trash-can.svg?react'
+
 export default function Tarefa() {
+	const navigate = useNavigate()
+
 	const { nome, prazo, anotacao } = useLoaderData();
 	const prazoFormatado = prazo.toLocaleString('pt-BR')
+
+	const handleExitModal = () => navigate(-1)
 
 	return (
 		<section className={$.modal}>
