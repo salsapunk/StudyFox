@@ -1,0 +1,56 @@
+.modal {
+	padding: 2rem;
+	width: 40rem;
+	min-height: 20rem;
+	max-height: 25rem;
+	border-radius: 1rem;
+	border: 4px solid var(--marrom-1);
+	background-color: var(--laranja);
+}
+.modal header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.modal article {
+	margin-top: 1rem;
+}
+
+.task_name {
+	color: var(--carmim-acinzentado);
+	font-weight: 800;
+}
+
+.due_date {
+	color: #196b00;
+	font-weight: 600;
+}
+
+.button_wrapper {
+	display: flex;
+	gap: 0.5rem;
+}
+.button_wrapper button {
+	cursor: pointer;
+	padding: 10px;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	border: none;
+	background-color: var(--carmim-acinzentado);
+}
+.button_wrapper button .svg {
+	width: 100%;
+	height: 100%;
+	fill: var(--marrom-2);
+
+	/* Para o texto alternativo: */
+	color: var(--marrom-2);
+}
+
+.task_annotation {
+	color: var(--carmim-acinzentado);
+	text-align: justify;
+	line-height: 1.333rem;
+}
+

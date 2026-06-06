@@ -1,6 +1,8 @@
 import { useLoaderData } from "react-router"
 import $ from '@/styles/Tarefa.module.css'
 
+import CloseWindow from '@/assets/icons/close-window.svg?react'
+import TrashCan from '@/assets/icons/trash-can.svg?react'
 export default function Tarefa() {
 	const { nome, prazo, anotacao } = useLoaderData();
 	const prazoFormatado = prazo.toLocaleString('pt-BR')
@@ -9,15 +11,15 @@ export default function Tarefa() {
 		<section className={$.modal}>
 			<header>
 				<hgroup>
-					<h2>{nome}</h2>
-					<p>{prazoFormatado}</p>
+					<h2 className={$.task_name}>{nome}</h2>
+					<p className={$.due_date}>{prazoFormatado}</p>
 				</hgroup>
 				<div className={$.button_wrapper}>
 					<button>
-						<img src="#" alt="Apagar tarefa"/>
+						<TrashCan className={$.svg}/>	
 					</button>
-					<button>
-						<img src="#" alt="Fechar janela"/>
+					<button onClick={handleExitModal}>
+						<CloseWindow className={$.svg}/>	
 					</button>
 				</div>	
 			</header>
