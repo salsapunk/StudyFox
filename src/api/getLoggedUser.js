@@ -1,5 +1,5 @@
 async function getLoggedUser() {
-  const res = await fetch('https://studyfoxapi.onrender.com/api/v1/validate', {
+  const res = await fetch('/api/validate', {
     credentials: 'include',
   });
 
