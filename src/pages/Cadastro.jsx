@@ -1,5 +1,5 @@
 
-import "../styles/Cadastro.css";
+import "@/src/styles/Cadastro.css";
 
 export default function Cadastro() { 
   return (
