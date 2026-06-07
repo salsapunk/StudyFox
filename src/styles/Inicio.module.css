@@ -1,0 +1,139 @@
+body {
+    background-color: #1e191a;
+    color: #faf9f4;
+    font-family: 'Raleway';
+    min-height: 100vh;
+}
+
+.botaoLogin {
+    border: 2px solid #faf9f4;
+    background: transparent;
+    color: #faf9f4;
+    padding: 0.45rem 2.5rem;
+    border-radius: 999px;
+    font-family: 'Raleway';
+    font-size: 1.1rem;
+    font-style: italic;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.botaoLogin:hover {
+    background: #8339019a;
+}
+
+.tituloderosto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+}
+
+.tituloArco {
+    width: 800px;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin-bottom: -220px;
+    margin-top: -260px;
+}
+
+.imagemRaposa {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin-top: -300px;
+    margin-bottom: -200px;
+}
+
+.conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 3rem 4rem;
+    align-items: center;
+}
+
+.cabecalhoSobre {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.rotulo {
+    font-style: italic;
+    font-size: 2rem;
+    color: #faf9f4;
+}
+
+.marca {
+    font-family: 'Sour Gummy';
+    font-size: 2.5rem;
+    color: #f28c38;
+    -webkit-text-stroke: 1px #9f4b00;
+    letter-spacing: 1px;
+}
+
+.textoSobre {
+    font-style: italic;
+    font-family: 'Raleway';
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: #faf9f4;
+    text-align: center;
+}
+
+.titulodois {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tituloChamada {
+    font-family: 'Sour Gummy';
+    font-size: 6rem;
+    color: #f28c38;
+    -webkit-text-stroke: 2px #9f4b00;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.botaoCadastro {
+    margin-top: 2rem;
+    border: 2px solid #faf9f4;
+    background: transparent;
+    color: #faf9f4;
+    padding: 0.9rem 3.5rem;
+    border-radius: 999px;
+    font-family: 'Raleway';
+    font-size: 1.1rem;
+    font-style: italic;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.botaoCadastro:hover {
+    background: #8339019a;
+}
+
+.rodape {
+    text-align: center;
+    padding: 1.5rem;
+    font-family: 'Raleway';
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #888888;
+    border-top: 1px solid #2e2e2e;
+}
+.rodape a {
+    color: #f28c38;
+}
