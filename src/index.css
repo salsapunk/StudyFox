@@ -36,13 +36,16 @@ h4, h5, h6 {
 	font-family: 'Sour Gummy', serif;
 }
 
-body, div#root {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--carmim-acinzentado);
 }
 
-body {
-	background-color: var(--carmim-acinzentado);
+div#root {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* cresce para preencher o body, sem forçar 100vh próprio */
 }
 
