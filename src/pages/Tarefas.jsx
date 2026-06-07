@@ -16,7 +16,7 @@ const COLUNAS = [
 export default function Tarefas() {
 	const { materiaId } = useParams()
 	const navigate = useNavigate()
-	const isTarefaOpen = useMatch("/materias/:materiaId/tarefa/:tarefaId")
+	const isModalOpen = !useMatch("/materias/:materiaId") // Verifica se o caminho atual não é o da página Tarefas
 
 	/* SOBRE A EXIBIÇÃO DAS TAREFAS
 	 *	Apesar da filtragem provavelmente se manter, o nível de complexidade
@@ -48,6 +48,7 @@ export default function Tarefas() {
 		event.preventDefault()
 		navigate(`/materias/${materiaId}/tarefa/${tarefaId}`)
 	}
+	const handleClickCriarTarefa = () => navigate(`/materias/${materiaId}/criarTarefa`)
 	const handleClickOverlay = () => navigate(-1)
 	const handleClickModal = (event) => event.stopPropagation()
 
@@ -57,7 +58,9 @@ export default function Tarefas() {
 			{/* Cabeçalho da página */}
             <header className={$.header}>
                 <h1>Tarefas</h1>
-                <button>+ Criar tarefa</button>
+                <button onClick={handleClickCriarTarefa}>
+					+ Criar tarefa
+				</button>
             </header>
 
 			{/* Quadro Kanban */}
@@ -81,8 +84,8 @@ export default function Tarefas() {
             </section>
         </main>
 
-		{/* Wrapper p/a rota /materias/:materiaId/tarefa/:tarefaId */}
-		{isTarefaOpen && (
+		{/* Wrapper p/as rotas filhas de /materias/:materiaId */}
+		{isModalOpen && (
 			<div className={$.modal_overlay} onClick={handleClickOverlay}>
 				<div className={$.modal_content} onClick={handleClickModal}>
 					<Outlet />
