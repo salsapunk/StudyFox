@@ -22,9 +22,14 @@ export default function CriarTarefa() {
 	const onFormReset = () => alterFormState({ 
 		...initialFormState, prazo: ''
 	})
+	const onFormSubmit = (event) => {
+		event.preventDefault()
+		/* Lógica da API aqui... */
+		navigate(-1)
+	}
 
 	return (
-		<form className={$.modal}>
+		<form className={$.modal} onReset={onFormReset} onSubmit={onFormSubmit}>
 			<header className={$.form_header}>
 				<h2>Nova tarefa</h2>
 				<button 
@@ -74,7 +79,6 @@ export default function CriarTarefa() {
 				<button 
 					className={$.btn_reset}
 					type="reset"
-					onClick={onFormReset}
 				>
 					Limpar tudo
 				</button>
