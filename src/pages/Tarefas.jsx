@@ -1,31 +1,18 @@
 import { useState } from "react";
 import { DragDropProvider } from "@dnd-kit/react";
-import { Outlet, useNavigate, useParams, useMatch } from 'react-router';
+import { Outlet, useNavigate, useParams, useMatch, useLoaderData } from 'react-router';
 
 import CardTarefa from "@/components/CardTarefa";
 import Coluna from "@/components/Coluna";
 import $ from "@/styles/Tarefas.module.css";
 
-import TAREFAS from '@/temp_data/tarefas';
-const COLUNAS = [
-    { id: 1, nome: "A fazer" },
-    { id: 2, nome: "Em andamento" },
-    { id: 3, nome: "Concluídas" },
-];
-
 export default function Tarefas() {
-	const { materiaId } = useParams()
 	const navigate = useNavigate()
-	const isModalOpen = !useMatch("/materias/:materiaId") // Verifica se o caminho atual não é o da página Tarefas
+	const { materiaId } = useParams()
+	const { tarefas, colunas } = useLoaderData()
+	const isModalOpen = !useMatch("/materias/:materiaId")
 
-	/* SOBRE A EXIBIÇÃO DAS TAREFAS
-	 *	Apesar da filtragem provavelmente se manter, o nível de complexidade
-	 *	para esta página alterará com a integração do site com a API, devido
-	 *	à lógica de fetching das tarefas.
-	 */
-	const [listaTarefas, setListaTarefas] = useState(TAREFAS.filter(
-		tarefa => tarefa.codigo === parseInt(materiaId)
-	))
+	const [listaTarefas, setListaTarefas] = useState(tarefas)
 
 	const handleDragEnd = (event) => {
 		const tarefaId = event.operation.source?.id
@@ -66,7 +53,7 @@ export default function Tarefas() {
 			{/* Quadro Kanban */}
             <section className={$.kanban_board}>
                 <DragDropProvider onDragEnd={handleDragEnd}>
-                    {COLUNAS.map((col) => (
+                    {colunas.map((col) => (
                         <Coluna key={col.id} id={col.id} nome={col.nome}>
                             {listaTarefas
                                 .filter((tar) => tar.coluna === col.id)
