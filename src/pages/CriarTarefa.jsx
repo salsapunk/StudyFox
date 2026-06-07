@@ -2,27 +2,24 @@ import { useReducer } from "react"
 import { useNavigate } from 'react-router'
 
 import $ from '@/styles/CriarTarefa.module.css'
+import getTomorrowDate from "@/utils/getTomorrowDate"
 
 import CloseWindow from '@/assets/icons/close-window.svg?react'
 
-function formReducer(prev, next) {
-	return { ...prev, ...next }
-}
-
-function getTomorrow() {
-	const tomorrow = new Date()
-	tomorrow.setDate(tomorrow.getDate() + 1)
-	return tomorrow
-}
 
 export default function CriarTarefa() {
 	const navigate = useNavigate()
 
-	const [formState, alterFormState] = useReducer(formReducer, {
+	const initialFormState = {
 		nome: '',
-		prazo: getTomorrow().toISOString().split('T')[0],
+		prazo: getTomorrowDate().toISOString().split('T')[0],
 		anotacao: '',
-	})
+	}
+
+	const navigate = useNavigate()
+	const [formState, alterFormState] = useReducer((prev, next) => {
+		return { ...prev, ...next }
+	}, initialFormState)
 
 	const handleExitModal = () => navigate(-1)
 
