@@ -60,7 +60,8 @@ export default function CriarTarefa() {
 				<div className={$.input_wrapper}>
 					<label htmlFor="anotacao">Anotação:</label>
 					<textarea 
-						name="anotacao"
+						name="anotacao" spellCheck="true"
+						rows="6" wrap="soft"
 						value={formState.anotacao}
 						onChange={(e) => alterFormState({ anotacao: e.target.value })}
 					/>
