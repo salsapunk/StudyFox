@@ -5,6 +5,7 @@ import Inicio from "./pages/Inicio";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Materias from "./pages/Materias";
+import Opcoes from "./pages/Opcoes.jsx";
 import Tarefas from "./pages/Tarefas";
 import Tarefa from "./pages/Tarefa";
 import CriarTarefa from "./pages/CriarTarefa";
@@ -23,6 +24,7 @@ let router = createBrowserRouter([
 			{ index: true, Component: Inicio },
 			{ path: "/login", Component: Login },
 			{ path: "/cadastro", Component: Cadastro },
+			{ path: "/opcoes", Component: Opcoes },
 			{
 				Component: MainLayout,
 				children: [

@@ -1,12 +1,14 @@
 :root {
 	/** Cores de Fundo **/
 	--carmim-acinzentado: #1e191a;
+	--marrom-4: #a85c10;
 	--marrom-3: #704626;
 	--marrom-2: #94592A;
 
 	/** Cores de Texto **/
-	--amarelo-claro: #faf9f4;
+	--amarelo-claro: #f5deb0;
 	--laranja: #f28c38;
+	--laranja-escuro: #c87832;
 
 	/** Cores de Contorno de Texto **/
 	--lilas-claro: #e0c5f9;
@@ -32,7 +34,7 @@
 }
 
 h1, h2, h3,
-h4, h5, h6 {
+h4, h5, h6, span {
 	font-family: 'Sour Gummy', serif;
 }
 
