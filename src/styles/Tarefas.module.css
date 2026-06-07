@@ -1,0 +1,48 @@
+.page {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.header {
+	display: flex;
+	padding: 0.75rem 1.25rem;
+	gap: 1.25rem;
+	border-top: 4px double var(--marrom-1);
+}
+.header h1 {
+	font-size: 1.5rem;
+}
+.header button {
+	padding: 0 .75rem;
+	background: var(--laranja);
+	border-radius: 1rem;
+	border: 2px solid var(--marrom-1);
+	color: var(--marrom-1);
+	font-size: 1.125rem;
+	font-family: 'Sour Gummy';
+	font-weight: 500;
+}
+.header button:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.kanban_board {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	gap: 4px;
+	background-color: var(--marrom-1);
+}
+
+.modal_overlay {
+	position: fixed;
+	inset: 0;
+	background: rgb(from var(--carmim-acinzentado) r g b / 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+}
+

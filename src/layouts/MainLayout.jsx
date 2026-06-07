@@ -1,28 +1,39 @@
 import { useState } from "react";
 import { Outlet } from "react-router";
+
+import $ from "@/styles/MainLayout.module.css";
 import OpcoesModal from "./modals/OpcoesModal";
 
+import _gearIcon from '@/assets/icons/gear.png'
+import _logo from '@/assets/images/logo.png'
+
 export default function MainLayout() {
-  const [modalAberto, setModalAberto] = useState(false);
+	const [modalAberto, setModalAberto] = useState(false);
 
-  return (
-    <>
-      <header>
-        <h1>StudyFox</h1>
-        <p>(insira logo aqui)</p>
-      </header>
+	return (
+		<>
+			<header className={$.header}>
+				<div>
+					<button 
+						onClick={() => setModalAberto(true)}
+						className={$.options_btn}
+					>
+						<img src={_gearIcon} alt="Botão de configurações" />
+					</button>
+				</div>
+				<div className={$.logotype}>
+					<h1 className={$.title}>StudyFox</h1>
+					<img src={_logo} alt="Logotipo do StudyFox" /> {/* TBD: Substituir _gearIcon pelo ícone da logotipo */}
+				</div>
+			</header>
 
-      <nav>
-        <button onClick={() => setModalAberto(true)}>Abrir opções</button>
-      </nav>
+			<OpcoesModal
+				aberto={modalAberto}
+				onFechar={() => setModalAberto(false)}
+			/>
 
-      <OpcoesModal
-        aberto={modalAberto}
-        onFechar={() => setModalAberto(false)}
-      />
-
-      <Outlet context={{ abrirOpcoes: () => setModalAberto(true) }} />
-    </>
-  );
+			<Outlet context={{ abrirOpcoes: () => setModalAberto(true) }} />
+		</>
+	);
 }
 

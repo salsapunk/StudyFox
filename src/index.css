@@ -1,0 +1,53 @@
+:root {
+	/** Cores de Fundo **/
+	--carmim-acinzentado: #1e191a;
+	--marrom-4: #a85c10;
+	--marrom-3: #704626;
+	--marrom-2: #94592A;
+
+	/** Cores de Texto **/
+	--amarelo-claro: #f5deb0;
+	--laranja: #f28c38;
+	--laranja-escuro: #c87832;
+
+	/** Cores de Contorno de Texto **/
+	--lilas-claro: #e0c5f9;
+	--marrom-1: #9f4b00;
+}
+
+@font-face {
+	font-family: "Sour Gummy";
+	src: url(./assets/fonts/Sour_Gummy/SourGummy-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+	font-family: "Raleway";
+	src: url(./assets/fonts/Raleway/Raleway-VariableFont_wght.ttf)
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: var(--amarelo-claro);
+	font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3,
+h4, h5, h6, span {
+	font-family: 'Sour Gummy', serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--carmim-acinzentado);
+}
+
+div#root {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* cresce para preencher o body, sem forçar 100vh próprio */
+}
+

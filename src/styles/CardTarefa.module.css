@@ -1,0 +1,21 @@
+.task_card {
+	padding: .75rem;
+	border-radius: 1rem;
+	background-color: var(--laranja);
+}
+.task_card h3 {
+	color: var(--carmim-acinzentado);
+	font-weight: 500;
+	font-size: 1.125rem;
+}
+
+/* Classes variáveis com base na coluna em que o cartão se encontra */
+.todo {
+	background-color: var(--laranja);
+}
+.doing {
+	background-color: var(--marrom-2);
+}
+.done {
+	background-color: var(--marrom-3);
+}
