@@ -73,6 +73,12 @@ export default function CriarTarefa() {
 				>
 					Criar tarefa
 				</button>
+				<button 
+					className={$.btn_reset}
+					type="reset"
+				>
+					Limpar tudo
+				</button>
 			</div>
 		</form>
 	)
