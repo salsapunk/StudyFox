@@ -14,9 +14,8 @@ import CriarTarefa from "@/pages/CriarTarefa";
 import MainLayout from "@/layouts/MainLayout";
 
 // Loaders e Actions:
-import tarefaLoader from "@/api/tarefaLoader";
-import tarefasLoader from "@/api/tarefasLoader";
-import authLoader from "@/api/authLoader";
+import tarefaLoader from "./loaders/tarefaLoader";
+import tarefasLoader from "./loaders/tarefasLoader";
 
 let router = createBrowserRouter([
 	{
@@ -28,7 +27,6 @@ let router = createBrowserRouter([
 			{ path: "/opcoes", Component: Opcoes },
 			{
 				Component: MainLayout,
-				// loader: authLoader,
 				children: [
 					{ path: "/materias", Component: Materias },
 					{
