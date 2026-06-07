@@ -42,6 +42,7 @@ body {
   width: 100%;
   object-fit: contain;
   image-rendering: pixelated; /* keeps the pixel-art crisp */
+  margin-top: -135px;
 }
 
 .ParteDireita {

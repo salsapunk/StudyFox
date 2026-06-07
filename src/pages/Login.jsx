@@ -1,4 +1,4 @@
-import "@/src/styles/Login.css";
+import "../styles/Login.css";
 export default function Login() {
   return (
     <div className="PáginaLogin">
@@ -8,17 +8,17 @@ export default function Login() {
 
         <div className="login-header">
           <img src="./src/images/STUDYFOX.png" alt="Logo StudyFox" className="LogoStudyfox" />
-          <p className="login-subtitle">Login to your account</p>
+          <p className="login-subtitle">Login to your account:</p>
         </div>
 
         <div className="Formulário">
           <div className="LoginEmail">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email:</label>
             <input type="email" id="email" name="Email" />
           </div>
 
           <div className="LoginSenha">
-            <label htmlFor="senha">Password</label>
+            <label htmlFor="senha">Password:</label>
             <input type="password" id="senha" name="Password" />
           </div>
         </div>
