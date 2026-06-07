@@ -1,8 +1,6 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,400;0,600;1,400&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +9,7 @@
 
 body {
   background-color: #1e191a;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway';
   color: #ffffff;
 }
 
@@ -64,7 +62,7 @@ body {
 }
 
 .ParteDireita p {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway';
   font-style: italic;
   font-size: 1.1rem;
   color: #e0e0e0;
@@ -93,7 +91,7 @@ body {
 
 .CriaçãoEmail label,
 .CriaçãoSenha label {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway';
   font-style: italic;
   font-size: 1rem;
   color: #cccccc;
@@ -106,7 +104,7 @@ body {
   border: none;
   border-bottom: 1.5px solid #888888;
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway';
   font-size: 1rem;
   padding: 6px 4px;
   outline: none;
@@ -128,7 +126,7 @@ body {
   border: none;
   border-radius: 50px;
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway';
   font-style: italic;
   font-size: 1.1rem;
   font-weight: 600;
@@ -184,7 +182,7 @@ body {
 }
 
 .PossuoConta p {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway';
   font-size: 0.95rem;
   color: #cccccc;
 }
@@ -193,7 +191,7 @@ body {
   background: transparent;
   border: none;
   color: #ffffff;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Raleway';
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
