@@ -1,4 +1,6 @@
 import "../styles/Login.css";
+import { Link } from "react-router";
+
 export default function Login() {
   return (
     <div className="PáginaLogin">
@@ -23,9 +25,11 @@ export default function Login() {
           </div>
         </div>
 
+        <Link to="/materias">
         <button className="BotãoLogin" onClick={() => console.log("Fazendo login...")}>
           Login
         </button>
+        </Link>
 
         <div className="OutrosMeios">
           <button className="BotãoOutrosMeios" aria-label="Login com Google" />
@@ -35,9 +39,13 @@ export default function Login() {
 
         <div className="SignUp">
           <p>Don't have an account?</p>
+
+          <Link to="/Cadastro">
           <button className="Cadastrar" onClick={() => console.log("Aguarde...")}>
             Sign up
           </button>
+          </Link>
+
         </div>
 
       </div>

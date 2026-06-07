@@ -20,6 +20,13 @@
   flex-direction: column;
   justify-content: center;
   padding: 3rem 5rem;
+  display: flex;
+  
+}
+
+.ParteEsquerda > a {
+  display: block;
+  width: 60%;
 }
 
 /* Header / Logo */
@@ -95,13 +102,13 @@
   font-style: italic;
   font-family: 'Sour Gummy';
   padding: 12px 0;
-  width: 60%;
+  width: 100%;
   cursor: pointer;
   transition: background 0.15s, transform 0.1s;
   margin-bottom: 0.5rem;
   letter-spacing: 0.02em;
   box-shadow: 0 4px 16px rgba(232, 132, 26, 0.35);
-  transition: transform 0.15s ease, box-shadow 0.15 ease, filter 0.15 ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 
 .BotãoLogin:hover {
