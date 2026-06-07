@@ -7,6 +7,7 @@ import Cadastro from "./pages/Cadastro";
 import Materias from "./pages/Materias";
 import Tarefas from "./pages/Tarefas";
 import Tarefa from "./pages/Tarefa";
+import CriarTarefa from "./pages/CriarTarefa";
 
 // Layouts:
 import MainLayout from "./layouts/MainLayout";
@@ -33,6 +34,10 @@ let router = createBrowserRouter([
 								path: "/materias/:materiaId/tarefa/:tarefaId",
 								Component: Tarefa,
 								loader: tarefaLoader
+							},
+							{
+								path: "/materias/:materiaId/criarTarefa",
+								Component: CriarTarefa
 							}
 						]
 					},
