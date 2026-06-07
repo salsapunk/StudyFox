@@ -6,10 +6,7 @@ import getTomorrowDate from "@/utils/getTomorrowDate"
 
 import CloseWindow from '@/assets/icons/close-window.svg?react'
 
-
 export default function CriarTarefa() {
-	const navigate = useNavigate()
-
 	const initialFormState = {
 		nome: '',
 		prazo: getTomorrowDate().toISOString().split('T')[0],
@@ -22,6 +19,9 @@ export default function CriarTarefa() {
 	}, initialFormState)
 
 	const handleExitModal = () => navigate(-1)
+	const onFormReset = () => alterFormState({ 
+		...initialFormState, prazo: ''
+	})
 
 	return (
 		<form className={$.modal}>
@@ -74,6 +74,7 @@ export default function CriarTarefa() {
 				<button 
 					className={$.btn_reset}
 					type="reset"
+					onClick={onFormReset}
 				>
 					Limpar tudo
 				</button>
