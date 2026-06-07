@@ -16,8 +16,8 @@ let router = createBrowserRouter([
 		path: "/",
 		children: [
 			{ index: true, Component: Inicio },
-			{ path: "/login", Component: Login },
-			{ path: "/cadastro", Component: Cadastro },
+			{ path: "/Login", Component: Login },
+			{ path: "/Cadastro", Component: Cadastro },
 			{
 				Component: MainLayout,
 				children: [
