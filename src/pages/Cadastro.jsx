@@ -6,12 +6,12 @@ export default function Cadastro() {
     <div className="PáginaCadastro">
 
       <div className="ParteEsquerda">
-        <img className="MensagemBoasVindas" src="./src/images/bem-vindo02.png" alt="Mensagem de boas vindas"/>
-        <img className="RaposaAcenando" src="./src/images/RaposaAcenando.png" alt="Raposa fofinha"/>
+        <img className="MensagemBoasVindas" src="./src/assets/images/bem-vindo02.png" alt="Mensagem de boas vindas"/>
+        <img className="RaposaAcenando" src="./src/assets/images/fox_greeting.png" alt="Raposa fofinha"/>
       </div>
 
       <div className="ParteDireita">
-        <img className="NomeProjeto" src="./src/images/STUDYFOX.png" alt="Este é nome do projeto"/>
+        <img className="NomeProjeto" src="./src/assets/images/logotype.png" alt="Este é nome do projeto"/>
         <p>Create your acount:</p>
       </div>
 
