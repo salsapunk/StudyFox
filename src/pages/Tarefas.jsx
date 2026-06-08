@@ -5,6 +5,7 @@ import { Outlet, useNavigate, useParams, useMatch, useLoaderData } from 'react-r
 import CardTarefa from "@/components/CardTarefa";
 import Coluna from "@/components/Coluna";
 import $ from "@/styles/Tarefas.module.css";
+import changeTaskStatus from "@/api/changeTaskStatus";
 
 export default function Tarefas() {
 	const navigate = useNavigate()
@@ -14,28 +15,12 @@ export default function Tarefas() {
 
 	const [listaTarefas, setListaTarefas] = useState(tarefas)
 
-	// const handleDragEnd = (event) => {
-	// 	const tarefaId = event.operation.source?.id
-	// 	const colunaId = event.operation.target?.id
-
-	// 	if (!tarefaId || !colunaId) return;
-
-	// 	setListaTarefas(prev =>
-	// 		prev.map(tar =>
-	// 			tar.id_tarefa === tarefaId	// Atualiza apenas a tarefa movida
-	// 				? { ...tar, status: colunaId } 
-	// 				: tar
-	// 		)
-	// 	);
-	// }
-
 	const handleDragEnd = async (event) => {
 		const tarefaId = event.operation.source?.id
 		const colunaId = event.operation.target?.id
 
 		if (!tarefaId || !colunaId) return;
 
-		// Captura o status atual antes de mudar
 		const statusAnterior = listaTarefas.find(t => t.id_tarefa === tarefaId)?.status
 		if (statusAnterior === colunaId) return; // não mudou de coluna
 
@@ -48,11 +33,7 @@ export default function Tarefas() {
 		);
 
 		try {
-			await fetch(`/api/materia/${materiaId}/tarefa/${tarefaId}/status`, {
-				method: "PUT",	
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ status: colunaId }),
-			});
+			await changeTaskStatus(materiaId, tarefaId, colunaId)
 		} catch (error) {
 			console.error("Erro ao atualizar tarefa:", error);		
 			// Reverte pro status anterior
@@ -63,6 +44,7 @@ export default function Tarefas() {
 						: tar
 				)
 			);
+			window.alert('Erro ao atualizar o status da tarefa. \nTente novamente mais tarde.')
 		}
 	}
 
