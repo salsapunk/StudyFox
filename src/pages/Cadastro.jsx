@@ -1,6 +1,6 @@
 
 import "../styles/Cadastro.css";
-
+import { Link } from "react-router";
 export default function Cadastro() { 
   return (
     <div className="PáginaCadastro">
@@ -17,12 +17,12 @@ export default function Cadastro() {
 
       <div className="Formulário">
         <div className="CriaçãoEmail">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Email:</label>
             <input type="email" id="email" name="Email"/>
         </div>
 
         <div className="CriaçãoSenha">
-            <label htmlFor="senha">Password</label>
+            <label htmlFor="senha">Password:</label>
             <input type="password" id="password" name="Password"/>
         </div>
 
@@ -38,9 +38,13 @@ export default function Cadastro() {
 
         <div className="PossuoConta">
           <p>Alredy have an acount?</p>
+
+          <Link to="Login">
           <button className="LoginMinhaConta">
             Login
           </button>
+          </Link>
+
         </div>
 
       </div>

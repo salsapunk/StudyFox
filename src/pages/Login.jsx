@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 
 import "../styles/Login.css";
 import login from "@/api/login";
+import { Link } from "react-router";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -75,12 +76,16 @@ export default function Login() {
                     <button className="BotãoOutrosMeios" aria-label="Login com Instagram" />
                 </div>
 
-                <div className="SignUp">
-                    <p>Don't have an account?</p>
-                    <button className="Cadastrar" onClick={() => console.log("Aguarde...")}>
-                        Sign up
-                    </button>
-                </div>
+				<div className="SignUp">
+				  <p>Don't have an account?</p>
+
+				  <Link to="/Cadastro">
+				  <button className="Cadastrar" onClick={() => console.log("Aguarde...")}>
+					Sign up
+				  </button>
+				  </Link>
+
+				</div>
 
             </form>
 
