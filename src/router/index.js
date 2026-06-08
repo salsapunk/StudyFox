@@ -20,6 +20,7 @@ import tarefasLoader from "./loaders/tarefasLoader";
 import authLoader from "./loaders/authLoader";
 import materiasLoader from "./loaders/materiasLoader";
 import criarMateriaAction from "./actions/criarMateriaAction";
+import criarTarefaAction from "./actions/criarTarefaAction";
 
 let router = createBrowserRouter([
 	{
@@ -57,7 +58,8 @@ let router = createBrowserRouter([
 							},
 							{
 								path: "/materias/:materiaId/criarTarefa",
-								Component: CriarTarefa
+								Component: CriarTarefa,
+								action: criarTarefaAction
 							}
 						]
 					},
