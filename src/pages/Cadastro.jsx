@@ -43,7 +43,7 @@ export default function Cadastro() {
         <div className={styles.PossuoConta}>
           <p>Alredy have an acount?</p>
 
-          <Link to="Login">
+          <Link to="/login">
           <button className={styles.LoginMinhaConta}>
             Login
           </button>

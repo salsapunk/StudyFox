@@ -14,20 +14,58 @@ export default function Tarefas() {
 
 	const [listaTarefas, setListaTarefas] = useState(tarefas)
 
-	const handleDragEnd = (event) => {
+	// const handleDragEnd = (event) => {
+	// 	const tarefaId = event.operation.source?.id
+	// 	const colunaId = event.operation.target?.id
+
+	// 	if (!tarefaId || !colunaId) return;
+
+	// 	setListaTarefas(prev =>
+	// 		prev.map(tar =>
+	// 			tar.id_tarefa === tarefaId	// Atualiza apenas a tarefa movida
+	// 				? { ...tar, status: colunaId } 
+	// 				: tar
+	// 		)
+	// 	);
+	// }
+
+	const handleDragEnd = async (event) => {
 		const tarefaId = event.operation.source?.id
 		const colunaId = event.operation.target?.id
 
 		if (!tarefaId || !colunaId) return;
 
+		// Captura o status atual antes de mudar
+		const statusAnterior = listaTarefas.find(t => t.id_tarefa === tarefaId)?.status
+		if (statusAnterior === colunaId) return; // não mudou de coluna
+
 		setListaTarefas(prev =>
 			prev.map(tar =>
-				tar.id_tarefa === tarefaId	// Atualiza apenas a tarefa movida
-					? { ...tar, status: colunaId } 
+				tar.id_tarefa === tarefaId
+					? { ...tar, status: colunaId }
 					: tar
 			)
 		);
+
+		try {
+			await fetch(`/api/tarefas/${tarefaId}`, {
+				method: "PATCH",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ status: colunaId }),
+			});
+		} catch (error) {
+			console.error("Erro ao atualizar tarefa:", error);
+			// Reverte pro status anterior
+			setListaTarefas(prev =>
+				prev.map(tar =>
+					tar.id_tarefa === tarefaId
+						? { ...tar, status: statusAnterior }
+						: tar
+				)
+			);
+		}
 	}
+
 	const handleClickCard = (event, tarefaId) => {
 		/* Temporariamente vai ser aberto ao clicar com o botão direito, até eu
 		 * criar um componente de menu de contexto e/ou encontrar um método 
