@@ -9,6 +9,7 @@ import Opcoes from "@/pages/Opcoes.jsx";
 import Tarefas from "@/pages/Tarefas";
 import Tarefa from "@/pages/Tarefa";
 import CriarTarefa from "@/pages/CriarTarefa";
+import CriarMateria from "@/pages/CriarMateria";
 
 // Layouts:
 import MainLayout from "@/layouts/MainLayout";
@@ -17,6 +18,7 @@ import MainLayout from "@/layouts/MainLayout";
 import tarefaLoader from "./loaders/tarefaLoader";
 import tarefasLoader from "./loaders/tarefasLoader";
 import authLoader from "./loaders/authLoader";
+import materiasLoader from "./loaders/materiasLoader";
 
 let router = createBrowserRouter([
 	{
@@ -30,7 +32,17 @@ let router = createBrowserRouter([
 				Component: MainLayout,
 				loader: authLoader,
 				children: [
-					{ path: "/materias", Component: Materias },
+					{ 
+						path: "/materias", 
+						Component: Materias, 
+						loader: materiasLoader,
+						children: [
+							{
+								path: "/materias/criarMateria",
+								Component: CriarMateria
+							}
+						]
+					},
 					{
 						path: "/materias/:materiaId",
 						Component: Tarefas,
