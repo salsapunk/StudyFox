@@ -1,0 +1,69 @@
+.principal_container {
+    background-color: #1e1a17;
+    min-height: 100vh;
+    padding: 16px;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.card {
+    background-color: #b5732a;
+    border-radius: 14px;
+    padding: 14px 16px;
+    min-height: 120px;
+    cursor: pointer;
+}
+
+.card_label {
+    font-size: 13px;
+    font-weight: 900;
+    color: #3b1f05;
+    letter-spacing: 1.5px;
+}
+
+.nova_btn {
+    background-color: #b5732a;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.nova_label {
+    font-size: 13px;
+    font-weight: 900;
+    color: #3b1f05;
+    letter-spacing: 1.5px;
+}
+
+.plus_icon {
+    width: 22px;
+    height: 22px;
+    background-color: #e8a44a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 900;
+    color: #3b1f05;
+}
+
+.modal_overlay {
+	position: fixed;
+	inset: 0;
+	background: rgb(from var(--carmim-acinzentado) r g b / 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+}
+

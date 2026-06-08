@@ -1,5 +1,3 @@
-import '../index.css'
-
 span {
   color: var(--amarelo-claro);
 }
@@ -74,7 +72,7 @@ span {
   height: 36px;
   border-radius: 50%;
   background-color: var(--carmim-acinzentado);
-  color: var(amarelo-claro);
+  color: var(--amarelo-claro);
   border: none;
   font-size: 1.2rem;
   cursor: pointer;

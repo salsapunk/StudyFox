@@ -1,4 +1,4 @@
-import _TAREFAS from '@/temp_data/tarefas';
+import getTasksFromSubject from '@/api/getTasksFromSubject';
 
 const COLUNAS = [ // Quantidade de colunas disponíveis na visualização kanban
     { id: 1, nome: "A fazer" },
@@ -8,12 +8,9 @@ const COLUNAS = [ // Quantidade de colunas disponíveis na visualização kanban
 
 async function tarefasLoader({ params }) {
 	const { materiaId } = params
+	const TAREFAS = await getTasksFromSubject(materiaId);
 
-	const tarefas = _TAREFAS.filter(tarefa =>
-		tarefa.codigo === parseInt(materiaId)
-	)
-
-	return { tarefas, colunas: COLUNAS };
+	return { tarefas: TAREFAS.data, colunas: COLUNAS };
 }
 
 export default tarefasLoader;

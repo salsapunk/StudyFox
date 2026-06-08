@@ -102,7 +102,7 @@
   font-style: italic;
   font-family: 'Sour Gummy';
   padding: 12px 0;
-  width: 100%;
+  width: 50%;
   cursor: pointer;
   transition: background 0.15s, transform 0.1s;
   margin-bottom: 0.5rem;

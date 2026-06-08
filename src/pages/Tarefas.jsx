@@ -22,8 +22,8 @@ export default function Tarefas() {
 
 		setListaTarefas(prev =>
 			prev.map(tar =>
-				tar.id === tarefaId	// Atualiza apenas a tarefa movida
-					? { ...tar, coluna: colunaId } 
+				tar.id_tarefa === tarefaId	// Atualiza apenas a tarefa movida
+					? { ...tar, status: colunaId } 
 					: tar
 			)
 		);
@@ -55,13 +55,13 @@ export default function Tarefas() {
                 <DragDropProvider onDragEnd={handleDragEnd}>
                     {colunas.map((col) => (
                         <Coluna key={col.id} id={col.id} nome={col.nome}>
-                            {listaTarefas
-                                .filter((tar) => tar.coluna === col.id)
+                            {listaTarefas && listaTarefas
+                                .filter((tar) => tar.status === col.id)
                                 .map((tar) => (
 									<CardTarefa 
-										key={tar.id} id={tar.id} 
-										nome={tar.nome} coluna={tar.coluna}
-										onContextMenu={(e) => handleClickCard(e, tar.id)}
+										key={tar.id_tarefa} id={tar.id_tarefa} 
+										nome={tar.nome} coluna={tar.status}
+										onContextMenu={(e) => handleClickCard(e, tar.id_tarefa)}
 									/>
                                 ))
                             }
