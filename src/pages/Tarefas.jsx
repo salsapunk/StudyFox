@@ -55,7 +55,7 @@ export default function Tarefas() {
                 <DragDropProvider onDragEnd={handleDragEnd}>
                     {colunas.map((col) => (
                         <Coluna key={col.id} id={col.id} nome={col.nome}>
-                            {listaTarefas
+                            {listaTarefas && listaTarefas
                                 .filter((tar) => tar.status === col.id)
                                 .map((tar) => (
 									<CardTarefa 
