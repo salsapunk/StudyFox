@@ -20,7 +20,7 @@ export default function Materias() {
     return (<>
         <div className={styles.principal_container}>
             <div className={styles.grid_container}>
-                {listaMaterias.map((materia) => (
+                {listaMaterias && listaMaterias.map((materia) => (
                     <div 
 						key={materia.codigo_materia} 
 						className={styles.card} 
