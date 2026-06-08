@@ -19,6 +19,7 @@ import tarefaLoader from "./loaders/tarefaLoader";
 import tarefasLoader from "./loaders/tarefasLoader";
 import authLoader from "./loaders/authLoader";
 import materiasLoader from "./loaders/materiasLoader";
+import criarMateriaAction from "./actions/criarMateriaAction";
 
 let router = createBrowserRouter([
 	{
@@ -39,7 +40,8 @@ let router = createBrowserRouter([
 						children: [
 							{
 								path: "/materias/criarMateria",
-								Component: CriarMateria
+								Component: CriarMateria,
+								action: criarMateriaAction
 							}
 						]
 					},
