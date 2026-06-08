@@ -48,13 +48,13 @@ export default function Tarefas() {
 		);
 
 		try {
-			await fetch(`https://studyfoxapi.onrender.com/api/v1/materia/${materiaId}/tarefa/${tarefaId}`, {
+			await fetch(`/api/materia/${materiaId}/tarefa/${tarefaId}/status`, {
 				method: "PUT",	
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ status: colunaId }),
 			});
 		} catch (error) {
-			console.error("Erro ao atualizar tarefa:", error);
+			console.error("Erro ao atualizar tarefa:", error);		
 			// Reverte pro status anterior
 			setListaTarefas(prev =>
 				prev.map(tar =>
