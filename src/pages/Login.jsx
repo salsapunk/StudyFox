@@ -1,5 +1,8 @@
 import "../styles/Login.css";
 import { Link } from "react-router";
+import studyfox from "./src/images/STUDYFOX.png";
+import bemvindo from "./src/images/bem-vindo01.png";
+import raposasentada from "./src/images/RaposaSentada.png";
 
 export default function Login() {
   return (
@@ -9,7 +12,7 @@ export default function Login() {
       <div className="ParteEsquerda">
 
         <div className="login-header">
-          <img src="./src/images/STUDYFOX.png" alt="Logo StudyFox" className="LogoStudyfox" />
+          <img src={studyfox} alt="Logo StudyFox" className="LogoStudyfox" />
           <p className="login-subtitle">Login to your account:</p>
         </div>
 
@@ -52,8 +55,8 @@ export default function Login() {
 
       
       <div className="ParteDireita">
-        <img src="./src/images/bem-vindo01.png" alt="Bem-vindo de volta!" className="bemvindodevolta" />
-        <img src="./src/images/RaposaSentada.png" alt="Raposa fofa" className="RaposaSentada" />
+        <img src={bemvindo} alt="Bem-vindo de volta!" className="bemvindodevolta" />
+        <img src={raposasentada} alt="Raposa fofa" className="RaposaSentada" />
       </div>
 
     </div>

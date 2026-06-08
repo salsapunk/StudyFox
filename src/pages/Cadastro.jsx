@@ -1,17 +1,21 @@
 
 import "../styles/Cadastro.css";
 import { Link } from "react-router";
+import bemvindo from "./src/images/bem-vindo02.png";
+import raposaacenando from "./src/images/RaposaAcenando.png";
+import studyfox from "./src/images/STUDYFOX.png";
+
 export default function Cadastro() { 
   return (
     <div className="PáginaCadastro">
 
       <div className="ParteEsquerda">
-        <img className="MensagemBoasVindas" src="./src/images/bem-vindo02.png" alt="Mensagem de boas vindas"/>
-        <img className="RaposaAcenando" src="./src/images/RaposaAcenando.png" alt="Raposa fofinha"/>
+        <img className="MensagemBoasVindas" src={bemvindo} alt="Mensagem de boas vindas"/>
+        <img className="RaposaAcenando" src={raposaacenando} alt="Raposa fofinha"/>
       </div>
 
       <div className="ParteDireita">
-        <img className="NomeProjeto" src="./src/images/STUDYFOX.png" alt="Este é nome do projeto"/>
+        <img className="NomeProjeto" src={studyfox} alt="Este é nome do projeto"/>
         <p>Create your acount:</p>
       </div>
 
