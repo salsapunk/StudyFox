@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
-import styles from "../styles/Login.css";
+import "../styles/Login.css";
 import login from "@/api/login";
 import { Link } from "react-router";
 import studyfox from "../assets/images/logotype.png";

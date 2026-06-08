@@ -1,5 +1,5 @@
 
-import styles from "../styles/Cadastro.css";
+import "../styles/Cadastro.css";
 import { Link } from "react-router";
 import bemvindo from "../assets/images/bem-vindo02.png";
 import raposaacenando from "../assets/images/fox_greeting.png";
