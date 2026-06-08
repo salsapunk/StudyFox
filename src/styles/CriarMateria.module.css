@@ -1,0 +1,75 @@
+.modal {
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	gap: 1rem;
+	width: 40rem;
+	max-height: 25rem;
+	border-radius: 1rem;
+	border: 4px solid var(--marrom-1);
+	background-color: var(--laranja);
+}
+.modal * {
+	color: var(--carmim-acinzentado);
+}
+.modal .form_content {
+	display: flex;
+	width: 100%;
+	gap: 1rem;
+}
+.modal .form_content :first-child {
+	flex: 8;
+}
+.modal .form_content :last-child {
+	flex: 2;
+}
+
+.form_header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.form_header h2 {
+	font-size: 2rem;
+}
+
+.input_wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: .25rem;
+}
+.input_wrapper input,
+.input_wrapper textarea {
+	resize: none;
+	padding: .25rem;
+	border: 1px solid var(--marrom-1);
+	border-radius: .5rem;
+	background-color: var(--amarelo-claro);
+}
+
+.btn_submit {
+	cursor: pointer;
+	padding: .5rem;
+	border-radius: .5rem;
+	border: none;
+	color: var(--amarelo-claro);	
+	font-size: 1rem;
+	background-color: #196b00;
+}
+
+.btn_exit {
+	cursor: pointer;
+	padding: 10px;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 50%;
+	border: none;
+	background-color: var(--carmim-acinzentado);
+}
+.svg {
+	width: 100%;
+	height: 100%;
+	fill: var(--marrom-2);
+}
+
+
