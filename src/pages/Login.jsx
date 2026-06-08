@@ -4,9 +4,9 @@ import { useNavigate } from "react-router";
 import "../styles/Login.css";
 import login from "@/api/login";
 import { Link } from "react-router";
-import studyfox from "./src/images/STUDYFOX.png";
-import bemvindo from "./src/images/bem-vindo01.png";
-import raposasentada from "./src/images/RaposaSentada.png";
+import studyfox from "../assets/images/logotype.png";
+import bemvindo from "../assets/images/bem-vindo01.png";
+import raposasentada from "../assets/images/fox_standing_on_book.png";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -42,11 +42,6 @@ export default function Login() {
                 <img src={studyfox} alt="Logo StudyFox" className="LogoStudyfox" />
                 <p className="login-subtitle">Login to your account:</p>
               </div>
-
-                <div className="login-header">
-                    <img src="./src/assets/images/logotype.png" alt="Logo StudyFox" className="LogoStudyfox" />
-                    <p className="login-subtitle">Login to your account:</p>
-                </div>
 
                 <div className="Formulário">
                     <div className="LoginEmail">

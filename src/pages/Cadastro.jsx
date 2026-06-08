@@ -1,9 +1,9 @@
 
 import "../styles/Cadastro.css";
 import { Link } from "react-router";
-import bemvindo from "./src/images/bem-vindo02.png";
-import raposaacenando from "./src/images/RaposaAcenando.png";
-import studyfox from "./src/images/STUDYFOX.png";
+import bemvindo from "../assets/images/bem-vindo02.png";
+import raposaacenando from "../assets/images/fox_greeting.png";
+import studyfox from "../assets/images/logotype.png";
 
 export default function Cadastro() { 
   return (
