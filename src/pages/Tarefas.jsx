@@ -48,7 +48,7 @@ export default function Tarefas() {
 		);
 
 		try {
-			await fetch(`https://studyfoxapi.onrender.com/api/v1/materias/${materiaId}/tarefa/${tarefaId}`, {
+			await fetch(`https://studyfoxapi.onrender.com/api/v1/materia/${materiaId}/tarefa/${tarefaId}`, {
 				method: "PUT",	
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ status: colunaId }),
