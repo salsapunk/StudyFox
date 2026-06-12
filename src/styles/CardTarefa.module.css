@@ -2,6 +2,7 @@
 	padding: .75rem;
 	border-radius: 1rem;
 	background-color: var(--laranja);
+	cursor: pointer;
 }
 .task_card h3 {
 	color: var(--carmim-acinzentado);
