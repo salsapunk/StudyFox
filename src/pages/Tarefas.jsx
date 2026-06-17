@@ -4,8 +4,10 @@ import { Outlet, useNavigate, useParams, useMatch, useLoaderData } from 'react-r
 
 import CardTarefa from "@/components/CardTarefa";
 import Coluna from "@/components/Coluna";
-import $ from "@/styles/Tarefas.module.css";
 import changeTaskStatus from "@/api/changeTaskStatus";
+import { tarefasManager } from "@/utils/dndManagers";
+
+import $ from "@/styles/Tarefas.module.css";
 
 export default function Tarefas() {
 	const navigate = useNavigate()
@@ -47,14 +49,8 @@ export default function Tarefas() {
 			window.alert('Erro ao atualizar o status da tarefa. \nTente novamente mais tarde.')
 		}
 	}
-
-	const handleClickCard = (event, tarefaId) => {
-		/* Temporariamente vai ser aberto ao clicar com o botão direito, até eu
-		 * criar um componente de menu de contexto e/ou encontrar um método 
-		 * melhor. */
-		event.preventDefault()
-		navigate(`/materias/${materiaId}/tarefa/${tarefaId}`)
-	}
+	
+	const handleClickCard = (tarefaId) => { navigate(`/materias/${materiaId}/tarefa/${tarefaId}`) }
 	const handleClickCriarTarefa = () => navigate(`/materias/${materiaId}/criarTarefa`)
 	const handleClickOverlay = () => navigate(-1)
 	const handleClickModal = (event) => event.stopPropagation()
@@ -72,7 +68,7 @@ export default function Tarefas() {
 
 			{/* Quadro Kanban */}
             <section className={$.kanban_board}>
-                <DragDropProvider onDragEnd={handleDragEnd}>
+                <DragDropProvider manager={tarefasManager} onDragEnd={handleDragEnd}>
                     {colunas.map((col) => (
                         <Coluna key={col.id} id={col.id} nome={col.nome}>
                             {listaTarefas && listaTarefas
@@ -81,7 +77,7 @@ export default function Tarefas() {
 									<CardTarefa 
 										key={tar.id_tarefa} id={tar.id_tarefa} 
 										nome={tar.nome} coluna={tar.status}
-										onContextMenu={(e) => handleClickCard(e, tar.id_tarefa)}
+										onClick={() => handleClickCard(tar.id_tarefa)}
 									/>
                                 ))
                             }
